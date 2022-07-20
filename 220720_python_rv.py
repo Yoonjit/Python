@@ -1,69 +1,39 @@
-# <파이썬 키워드 리스트 출력>
-import keyword
-print(keyword.kwlist)
-print() # 한 줄 띄기
+# git reset --hard 헤드 주소
+# git push -f origin master
 
-# <주석 처리>
-# 한 줄 ctrl /
-# 선택 영역 ctrl k c
+a = 10
+a **= 2
+print('a는', a) # 문자열과 변수 사이에 자동으로 공백 생김
 
-# <snake case VS camel case>
-# hello_world - 함수, 변수
-# HelloWorld, Helloworld (첫 글자가 대문자) - 클래스
+str = '우영우'
+str += '영우' # 문자열에서의 복합 대입 연산자는 +, *만 가능 (-= X)
+print(str)
 
-# <자료형 확인>
-print(type('안녕'))
-print(type(123))
-print(type(123.0))
+for i in range(4):
+    str += '영우'
+print(str)
 print()
 
-# <출력>
-print('개졸림', '개피곤', 10, 20, 30) # >> 자동으로 단어마다 공백이 생긴다!
-print('"어리석은 불나방이 한 마리 더 날아들었구나1"')
-print("'어리석은 불나방이 한 마리 더 날아들었구나2'")
-print("\"어리석은 불나방이 한 마리 더 날아들었구나3\"")
-print("어리석은\t불나방이\t날아들었구나")
-print('어리석은'+' '+'불나방이'+' '+'한'+' '+'마리'+' '+'더'+' '+'날아들었구나4')
+i1 = input('논리값 입력: ')
+i2 = input('숫자 입력: ')
+print(type(i1)) # input으로 입력받은 것은 자료형이 무조건 문자열 형식
+print(type(i2))
 print()
 
-for i in range(5):
-    print('검은마법사'[i])
-print()
+# <cast: 자료형 변환>
+num1 = int(input('숫자 입력: '))
+num2 = int(input('숫자 입력: '))
+print(num1 + num2)
 
-string = '시그너스'
-print(string[0:3])
-print(string[1:])
-print(string[:4])
-print(len(string))
-print()
+# <swap>
+a = 12
+b = 34
+print(a, b)
+c = a
+a = b
+b = c
+print(a, b)
 
-# 여러 줄 문자열 """ '''
-print('''내가 아니라도
-눈부시게 사랑받았을 너라서
-그 소중한 시간을 나와 함께해줘서
-
-고마웠어
-예쁘고 아름다웠던 너의 그날에
-함께했던 그 모든 순간이 행복했어''')
-
-print('--------------------------------------------')
-
-# 줄을 바꿔서 출력하지 않겠다고 선언할 때 \ 사용
-print('''\
-내가 아니라도
-눈부시게 사랑받았을 너라서
-그 소중한 시간을 나와 함께해줘서
-
-고마웠어
-예쁘고 아름다웠던 너의 그날에
-함께했던 그 모든 순간이 행복했어\
-''')
-print()
-
-# 소수점 지수 표현
-print(0.123e2) # 소수점을 오른쪽으로 2칸 움직임 (0.123 * 10^2)
-print(0.123e-2) # 소수점을 왼쪽으로 2칸 움직임
-
-# 에러의 종류
-# 1) IndexError: 문자열이나 리스트의 수를 넘은 요소, 글자 선택할 때 발생
-# 2) TypeError: 자료형이 불일치할 때 발생 ex. 123 + 까꿍
+# <에러의 종류>
+# 3) ValueError: 변환할 수 없는 것을 변환하려고 할 때 발생
+#    ex. int("123.45") -> 실수 형태의 문자열을 정수로 바꾸려고 함
